@@ -68,5 +68,14 @@ public class Space {
         this.post = post;
     }
 
-
+    @Override
+    public String toString() {
+        return "Space{" +
+                "id=" + id +
+                ", isGeneral=" + isGeneral +
+                ", lstUsers=" + lstUsers +
+                ", lstComments=" + lstComments +
+                ", post=" + post +
+                '}';
+    }
 }
