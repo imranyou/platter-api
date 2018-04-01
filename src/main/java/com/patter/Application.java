@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.Arrays;
 
 @SpringBootApplication
-@ComponentScan(basePackageClasses = CommentController.class)
 public class Application {
 
     public static void main(String[] args) {
