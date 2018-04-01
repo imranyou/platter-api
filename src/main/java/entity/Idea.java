@@ -1,10 +1,11 @@
 package entity;
 
-import javax.persistence.EntityListeners;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 /**
  * Created by iyousuf.
  */
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Idea {
 
     private long id;

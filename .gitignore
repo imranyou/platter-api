@@ -1,0 +1,10 @@
+*.gradle*
+.gradle/*
+.ideal*
+patter-api.iml
+.idea/gradle.xml
+.idea/misc.xml
+.idea/modules.xml
+.idea/vcs.xml
+.idea/workspace.xml
+

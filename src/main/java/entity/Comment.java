@@ -1,8 +1,12 @@
 package entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 /**
  * Created by iyousuf.
  */
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Comment {
 
     private Long id;

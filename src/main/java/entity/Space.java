@@ -1,11 +1,15 @@
 package entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 /**
  * Created by iyousuf.
  */
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Space {
 
     private long id;
