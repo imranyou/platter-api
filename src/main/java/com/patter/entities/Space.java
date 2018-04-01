@@ -1,8 +1,7 @@
-package entity;
+package com.patter.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 /**
