@@ -36,6 +36,7 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-data-rest')
 	//compile('org.springframework.boot:spring-boot-starter-security')
 	compile('org.springframework.boot:spring-boot-starter-web-services')
+	compile group: 'org.postgresql', name: 'postgresql', version: '42.2.2'
 	//compile('de.codecentric:spring-boot-admin-starter-client')
 	//compile('de.codecentric:spring-boot-admin-starter-server')
 	compile('org.springframework.session:spring-session')
