@@ -48,33 +48,33 @@ public class Application {
     }
 
     //Testing
-//    @Bean
-//    public CommandLineRunner check(IdeaRepository repository) {
-//        return args -> {
-//
-//            repository.save(new Idea("FB LOGIN", "ADD A BUTTON",1));
-//            repository.save(new Idea("COFFEE MACHINE", "NEED COFFEE",2));
-//            repository.save(new Idea("MANAGER SUCKS", "CAN WE FIRE THEM",1));
-//
-//            log.info("All the customers");
-//            log.info("-----------------");
-//
-//            for(Idea idea : repository.findAll()){
-//                log.info(idea.toString());
-//            }
-//
-//            log.info("---------------");
-//
-//            repository.findById(1L);
-//
-//            log.info("---------------");
-//
-//            repository.findByTitle("FB LOGIN");
-//
-//
-//
-//        };
-//    }
+    @Bean
+    public CommandLineRunner check(IdeaRepository repository) {
+        return args -> {
+
+            repository.save(new Idea("FB LOGIN TEST", "ADD A BUTTON",1));
+            repository.save(new Idea("COFFEE MACHINE", "NEED COFFEE",2));
+            repository.save(new Idea("MANAGER SUCKS", "CAN WE FIRE THEM",1));
+
+            log.info("All the customers");
+            log.info("-----------------");
+
+            for(Idea idea : repository.findAll()){
+                log.info(idea.toString());
+            }
+
+            log.info("---------------");
+
+            log.info(repository.findById(2L).toString());
+
+            log.info("---------------");
+
+            log.info(repository.findByTitle("FB LOGIN TEST").toString());
+
+
+
+        };
+    }
 
 }
 

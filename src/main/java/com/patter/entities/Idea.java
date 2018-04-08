@@ -14,13 +14,16 @@ public class Idea {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
+    @Column(name = "IDEA_ID")
     private Long id;
 
-
+    @Column(name = "TITLE")
     private String title;
 
+    @Column(name = "DESCRIPTION")
     private String description;
 
+    @Column(name = "USER_KEY")
     private int user_key;
 
     protected Idea() {
