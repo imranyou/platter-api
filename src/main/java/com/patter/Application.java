@@ -69,7 +69,7 @@ public class Application {
 
             log.info("---------------");
 
-            log.info(repository.findByTitle("FB LOGIN TEST").toString());
+           // log.info(repository.findByTitle("FB LOGIN TEST").toString());
 
 
 

@@ -1,6 +1,7 @@
 package com.patter.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.google.gson.Gson;
 
 import javax.persistence.*;
 
@@ -24,7 +25,7 @@ public class Idea {
     private String description;
 
     @Column(name = "USER_KEY")
-    private int user_key;
+    private int userKey;
 
     protected Idea() {
     }
@@ -32,7 +33,7 @@ public class Idea {
     public Idea(String title, String description, Integer user_key) {
         this.title = title;
         this.description = description;
-        this.user_key = user_key;
+        this.userKey = user_key;
     }
 
     @Override
@@ -41,7 +42,9 @@ public class Idea {
                 "id=" + id +
                 ", title='" + title + '\'' +
                 ", description='" + description + '\'' +
-                ", user_key=" + user_key +
+                ", user_key=" + userKey +
                 '}';
     }
+
+
 }

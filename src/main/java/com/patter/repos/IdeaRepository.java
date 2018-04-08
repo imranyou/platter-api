@@ -7,8 +7,8 @@ import java.util.List;
 
 public interface IdeaRepository extends CrudRepository<Idea, Long> {
 
-    List<Idea> findById(Long id);
+    Idea findById(Long id);
 
-    List<Idea> findByTitle(String title);
+    List<Idea> findByUserKey(Integer user_key);
 
 }
