@@ -2,19 +2,18 @@ package com.patter.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.IdClass;
+import javax.persistence.*;
 
 /**
  * Created by iyousuf.
  */
-@JsonIgnoreProperties(ignoreUnknown = true)
 
+@Entity
+@Table(name = "IDEA")
 public class Idea {
 
-
+    @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
     private Long id;
 
 
@@ -22,15 +21,15 @@ public class Idea {
 
     private String description;
 
-    private User user;
+    private int user_key;
 
     protected Idea() {
     }
 
-    public Idea(String title, String description, User user) {
+    public Idea(String title, String description, Integer user_key) {
         this.title = title;
         this.description = description;
-        this.user = user;
+        this.user_key = user_key;
     }
 
     @Override
@@ -39,7 +38,7 @@ public class Idea {
                 "id=" + id +
                 ", title='" + title + '\'' +
                 ", description='" + description + '\'' +
-                ", user=" + user +
+                ", user_key=" + user_key +
                 '}';
     }
 }

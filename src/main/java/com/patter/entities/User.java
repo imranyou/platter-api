@@ -1,14 +1,18 @@
 package com.patter.entities;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import javax.persistence.*;
 
 /**
  * Created by iyousuf.
  */
 
-@JsonIgnoreProperties(ignoreUnknown = true)
+@Entity
+@Table(name = "USER")
 public class User {
 
+    @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
     public String id;
 
     public String userName;
@@ -18,6 +22,10 @@ public class User {
     public String lastName;
 
     public String email;
+
+    protected User(){
+
+    }
 
     public User(String id, String userName, String firstName, String lastName, String email) {
         this.id = id;

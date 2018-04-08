@@ -2,17 +2,27 @@ package com.patter.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import javax.persistence.*;
+
 /**
  * Created by iyousuf.
  */
 
-@JsonIgnoreProperties(ignoreUnknown = true)
+@Entity
+@Table(name = "COMMENT")
 public class Comment {
 
+    @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
     private Long id;
+
     private String description;
     private int upVote;
     private int downVote;
+
+    protected Comment(){
+
+    }
 
     public Comment(Long id, String description, int upVote, int downVote) {
         this.id = id;

@@ -1,33 +1,39 @@
 package com.patter.entities;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+
+import javax.persistence.*;
 import java.util.ArrayList;
 
 /**
  * Created by iyousuf.
  */
 
-@JsonIgnoreProperties(ignoreUnknown = true)
+@Entity
+@Table(name = "SPACE")
 public class Space {
-
+    @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
     private long id;
 
     private boolean isGeneral;
 
-    private ArrayList<User> lstUsers;
+    private ArrayList<Integer> lstUsers;
 
-    private ArrayList<Comment> lstComments;
+    private ArrayList<Integer> lstComments;
 
-    private Idea post;
+    private Integer idea_key;
 
 
-    public Space(long id, boolean isGeneral, ArrayList<User> lstUsers, ArrayList<Comment> lstComments, Idea post) {
+    protected Space() {
+    }
+
+    public Space(long id, boolean isGeneral, ArrayList<Integer> lstUsers, ArrayList<Integer> lstComments, Integer idea_key) {
         this.id = id;
         this.isGeneral = isGeneral;
         this.lstUsers = lstUsers;
         this.lstComments = lstComments;
-        this.post = post;
+        this.idea_key = idea_key;
     }
 
 
@@ -47,28 +53,29 @@ public class Space {
         isGeneral = general;
     }
 
-    public ArrayList<User> getLstUsers() {
+    public ArrayList<Integer> getLstUsers() {
         return lstUsers;
     }
 
-    public void setLstUsers(ArrayList<User> lstUsers) {
+    public void setLstUsers(ArrayList<Integer> lstUsers) {
         this.lstUsers = lstUsers;
     }
 
-    public ArrayList<Comment> getLstComments() {
+    public ArrayList<Integer> getLstComments() {
         return lstComments;
     }
 
-    public void setLstComments(ArrayList<Comment> lstComments) {
+    public void setLstComments(ArrayList<Integer> lstComments) {
         this.lstComments = lstComments;
     }
 
-    public Idea getPost() {
-        return post;
+
+    public Integer getIdea_key() {
+        return idea_key;
     }
 
-    public void setPost(Idea post) {
-        this.post = post;
+    public void setIdea_key(Integer idea_key) {
+        this.idea_key = idea_key;
     }
 
     @Override
@@ -78,7 +85,7 @@ public class Space {
                 ", isGeneral=" + isGeneral +
                 ", lstUsers=" + lstUsers +
                 ", lstComments=" + lstComments +
-                ", post=" + post +
+                ", idea_key=" + idea_key +
                 '}';
     }
 }
