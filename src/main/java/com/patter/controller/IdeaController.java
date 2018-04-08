@@ -22,29 +22,28 @@ public class IdeaController {
     @Autowired
     private IdeaRepository repository;
 
-    @Autowired
-    private Gson gson;
 
     @RequestMapping(value = "/idea")
-    public String getAllIdeas(){
+    public List<Idea> getAllIdeas(){
         List<Idea> allIdeas = new ArrayList<>();
         for(Idea idea : repository.findAll()){
             allIdeas.add(idea);
         }
-        return gson.toJson(allIdeas);
+        return allIdeas;
     }
 
     @RequestMapping(value = "/idea/id/{id}")
-    public String getIdeaByID(@PathVariable(value="id") Long id){
+    public Idea getIdeaByID(@PathVariable(value="id") Long id){
         Idea idea = repository.findById(id);
-        return gson.toJson(idea);
+        //return gson.toJson(idea);
+        return idea;
     }
 
 
     @RequestMapping(value = "/idea/user/{user_id}")
-    public String getIdeaByUser(@PathVariable(value="user_id") Integer user_id){
+    public List<Idea> getIdeaByUser(@PathVariable(value="user_id") Integer user_id){
         List<Idea> idea = repository.findByUserKey(user_id);
-        return gson.toJson(idea);
+        return idea;
     }
 
     @RequestMapping(value = "/idea/id", method = RequestMethod.POST)
@@ -54,6 +53,16 @@ public class IdeaController {
         return idea.getId().toString();
 
     }
+
+    @RequestMapping(value = "/idea/id", method = RequestMethod.DELETE)
+    public String deleteIdea(@RequestBody Idea idea){
+        //if idea exist logic
+        repository.delete(idea);
+        return idea.getId().toString();
+
+    }
+
+
 
 
 
