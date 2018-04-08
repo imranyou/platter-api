@@ -47,6 +47,14 @@ public class IdeaController {
         return gson.toJson(idea);
     }
 
+    @RequestMapping(value = "/idea/id", method = RequestMethod.POST)
+    public String createIdea(@RequestBody Idea idea){
+        //if idea exist logic
+        repository.save(idea);
+        return idea.getId().toString();
+
+    }
+
 
 
 }
