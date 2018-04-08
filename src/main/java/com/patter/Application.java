@@ -1,6 +1,10 @@
 package com.patter;
 
 import com.patter.controller.CommentController;
+import com.patter.entities.Idea;
+import com.patter.repos.IdeaRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -14,6 +18,8 @@ import java.util.Arrays;
 @SpringBootApplication
 public class Application {
 
+    private static final Logger log = LoggerFactory.getLogger(Application.class);
+
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
     }
@@ -23,6 +29,7 @@ public class Application {
         return "Greetings from Spring Boot!";
     }
 
+    //Check which bean loaded
     @Bean
     public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
         return args -> {
@@ -37,6 +44,35 @@ public class Application {
 
         };
     }
+
+    //Testing
+//    @Bean
+//    public CommandLineRunner check(IdeaRepository repository) {
+//        return args -> {
+//
+//            repository.save(new Idea("FB LOGIN", "ADD A BUTTON",null));
+//            repository.save(new Idea("COFFEE MACHINE", "NEED COFFEE",null));
+//            repository.save(new Idea("MANAGER SUCKS", "CAN WE FIRE THEM",null));
+//
+//            log.info("All the customers");
+//            log.info("-----------------");
+//
+//            for(Idea idea : repository.findAll()){
+//                log.info(idea.toString());
+//            }
+//
+//            log.info("---------------");
+//
+//            repository.findById(1L);
+//
+//            log.info("---------------");
+//
+//            repository.findByTitle("FB LOGIN");
+//
+//
+//
+//        };
+//    }
 
 }
 
